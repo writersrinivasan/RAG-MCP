@@ -47,6 +47,29 @@ falls back to the offline extractive answer, so the demo never breaks.
 
 ---
 
+## Deploy to Vercel
+
+This is a **standard single Next.js app** — Vercel auto-detects the framework, so
+no `vercel.json` is needed.
+
+1. Push the repo to GitHub (already done).
+2. In Vercel, **New Project → Import** this repository.
+3. Framework preset: **Next.js** (auto-detected). Build command `next build` and
+   output are the defaults — leave them as-is.
+4. Add environment variables in **Project → Settings → Environment Variables**
+   (do **not** commit them):
+   - `GROQ_API_KEY` = your Groq key
+   - `GROQ_MODEL` = `openai/gpt-oss-120b` (optional)
+   - Leaving these unset simply runs the app in offline demo/mock mode.
+5. Deploy. The `/api/chat` and `/api/agent` routes run as serverless functions on
+   the same domain — no separate services or extra routing required.
+
+> The `langgraph/agent.py` script is a **local reference** you run manually
+> (`python agent.py`) to see the real framework. The web app does not call it at
+> runtime, so it is not part of the Vercel deployment.
+
+---
+
 ## What's inside
 
 | Route          | Module      | Interactive hands-on                                             |
