@@ -1,0 +1,6 @@
+# Core — needed for DEMO mode (runs fully offline)
+langgraph>=0.2.0
+langchain-core>=0.3.0
+
+# LIVE mode only (uncomment + set OPENAI_API_KEY to use a real model/embeddings)
+# langchain-openai>=0.2.0
