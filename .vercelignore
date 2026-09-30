@@ -1,0 +1,10 @@
+# The langgraph/ folder is a LOCAL reference script (run manually with
+# `python agent.py`). The Next.js web app never calls it at runtime, so it is
+# not part of the Vercel deployment. Ignoring it keeps this a clean, single
+# Next.js project and stops Vercel from suggesting a multi-service setup.
+langgraph/
+
+# Python artifacts, just in case
+__pycache__/
+*.pyc
+.venv/
